@@ -51,13 +51,9 @@
 
             geometry.computeFaceNormals();
 
-            var material = new THREE.MeshLambertMaterial(
-                {
-                  color: 0xCC0000,
-                  side: THREE.DoubleSide
-                });
+            var material = new THREE.LineBasicMaterial( { color: 0xffffff, linewidth: 2 } );
 
-            var circleThing = new THREE.Mesh(geometry, material);
+            var circleThing = new THREE.LineSegments(new THREE.EdgesGeometry(geometry), material);
             scene.add(circleThing);
 
             // var cube = new THREE.Mesh( geometry, material );
